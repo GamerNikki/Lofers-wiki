@@ -10,14 +10,74 @@
       margin: 0;
       font-family: 'VT323', monospace;
       background-color: #f5f5f5;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f0f0f0;
+      padding: 1rem;
+      height: 100vh;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .dropdown {
+      margin-bottom: 1rem;
+    }
+
+    .dropdown label {
+      font-size: 1.2rem;
+      display: block;
+      cursor: pointer;
+      background-color: #d8d8d8;
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+
+    .dropdown input[type="checkbox"] {
+      display: none;
+    }
+
+    .dropdown-content {
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+      display: none;
+    }
+
+    .dropdown input[type="checkbox"]:checked ~ .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      text-decoration: none;
       color: #333;
+      padding: 0.3rem 0;
+    }
+
+    .dropdown-content a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 2rem;
+      flex-grow: 1;
     }
 
     header {
       background-color: #ffaec0;
       padding: 1rem 2rem;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-bottom: 2rem;
     }
 
     header h1 {
@@ -29,12 +89,6 @@
       margin: 0.5rem 0 0;
       font-size: 1.5rem;
       color: #5a5a5a;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
     }
 
     .quote {
@@ -57,23 +111,68 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Lofers-wiki</h1>
-    <p>the wiki for all things loafing, colors, or cats</p>
-  </header>
 
-  <main>
+  <nav class="sidebar">
+    <h2>Navigation</h2>
+
+    <div class="dropdown">
+      <label for="colors-toggle">➤ Colors</label>
+      <input type="checkbox" id="colors-toggle" />
+      <div class="dropdown-content">
+        <a href="wikipages/red-loaf.html">Red Loaf</a>
+        <a href="wikipages/blue-loaf.html">Blue Loaf</a>
+        <a href="wikipages/pastel-loaf.html">Pastel Loaf</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <label for="cats-toggle">➤ Cats</label>
+      <input type="checkbox" id="cats-toggle" />
+      <div class="dropdown-content">
+        <a href="wikipages/mittens.html">Mittens</a>
+        <a href="wikipages/snugglepaw.html">Snugglepaw</a>
+        <a href="wikipages/whiskerbean.html">Whiskerbean</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <label for="creators-toggle">➤ Creators</label>
+      <input type="checkbox" id="creators-toggle" />
+      <div class="dropdown-content">
+        <a href="wikipages/nikki.html">Nikki</a>
+        <a href="wikipages/contributors.html">Other Contributors</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <label for="badkitties-toggle">➤ Bad Kitties</label>
+      <input type="checkbox" id="badkitties-toggle" />
+      <div class="dropdown-content">
+        <a href="wikipages/scratchy.html">Scratchy</a>
+        <a href="wikipages/hissclaw.html">Hissclaw</a>
+        <a href="wikipages/angy-kitty.html">Angy Kitty</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="content">
+    <header>
+      <h1>Lofers-wiki</h1>
+      <p>the wiki for all things loafing, colors, or cats</p>
+    </header>
+
     <div class="quote">
       made with love for the community by Nikki and others
     </div>
 
-    <p>Welcome to the **Lofers-wiki** — your home for all things cozy, colorful, and cat-related. Browse articles, contribute lore, and enjoy the loafing!</p>
-    
-    <p><a href="index.html">Enter the wiki &rarr;</a></p>
+    <p>Welcome to the <strong>Lofers-wiki</strong> — your home for all things cozy, colorful, and cat-related, based on the Roblox game <em>Confined Kitties</em>. Browse articles, explore lore, and meet the kitties!</p>
+
+    <p><a href="wikipages/home.html">Enter the wiki &rarr;</a></p>
+
+    <footer>
+      &copy; 2025 Lofers-wiki. Made with ❤️ by Nikki and friends.
+    </footer>
   </main>
 
-  <footer>
-    &copy; 2025 Lofers-wiki. Made with ❤️ by Nikki and friends.
-  </footer>
 </body>
 </html>
